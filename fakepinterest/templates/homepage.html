@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>
+    {% block titulo %}
+      FakePinterest
+    {% endblock %}
+  </title>
+  <meta charset="utf-8">
+</head>
+<body>
+{% block body %}
+  <h1>Fake - Pinterest - Meu primeiro site no ar</h1>
+  <h2>Agora vamos começar</h2>
+
+  <form method="POST">
+    {{ form.csrf_token }}
+
+    {{ form.email.label() }}  <!-- Acesso direto à label -->
+    {{ form.email() }}      <!-- Chamada para renderizar o campo -->
+
+    {{ form.senha.label() }}  <!-- Acesso direto à label -->
+    {{ form.senha() }}      <!-- Chamada para renderizar o campo -->
+
+    {{ form.botao_confirmacao() }} <!-- Renderiza o botão -->
+  </form>
+  
+
+  {% endblock %}
+</body>
+</html>
